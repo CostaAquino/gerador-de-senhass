@@ -2,67 +2,114 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Define a codificação de caracteres como UTF-8, garantindo que caracteres especiais (como acentos e cedilhas) sejam corretamente exibidos -->
     <meta charset="UTF-8">
+
+    <!-- Configuração para tornar a página responsiva. 'width=device-width' ajusta a largura da página conforme a largura da tela do dispositivo. 'initial-scale=1.0' define o zoom inicial para 100% -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- O título da página que aparecerá na aba do navegador. Esse título é importante para SEO e a identificação da página pelo usuário -->
     <title>Gerador de senha</title>
+   
+    <!-- Link externo para o arquivo de estilo CSS que define a aparência da página -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Seção principal da página que contém o conteúdo do gerador de senha -->
     <section class="conteudo">
+        <!-- Div que contém o título e a descrição do gerador de senha -->
         <div class="conteudo-titulo">
+            <!-- Imagem que representa um cadeado fechado, simbolizando segurança -->
             <img src="unlock.svg" alt="cadeado fechado">
+            <!-- Título principal (h2) que descreve a funcionalidade do gerador de senha -->
             <h2 class="titulo-principal">Gerador de senhas</h2>
+            <!-- Subtítulo (h3) que explica a função da página -->
             <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura</h3>
         </div>
+       
+        <!-- Div onde a senha gerada será exibida para o usuário -->
         <div class="conteudo-senha">
+            <!-- Label associada ao campo de texto onde a senha gerada será mostrada -->
             <label for="senha">Senha</label>
+            <!-- Campo de texto (input) onde a senha gerada será exibida, o atributo 'readonly' impede a edição do conteúdo -->
             <input name="senha" type="text" id="campo-senha" readonly>
         </div>
+
+        <!-- Seção onde o usuário pode personalizar as opções de geração da senha -->
         <div class="parametro">
+            <!-- Título explicativo para a seção de personalização da senha -->
             <h3 class="parametro-titulo">Personalize sua senha</h3>
+           
+            <!-- Coluna que contém as opções de personalização da senha -->
             <div class="parametro-coluna__senha">
+                <!-- Opção para escolher o número de caracteres da senha gerada -->
                 <div class="parametro-senha">
+                    <!-- Título da opção de configuração do número de caracteres -->
                     <h4 class="parametro-senha__titulo">Número de caracteres</h4>
+                    <!-- Div que contém os botões e o texto para o número de caracteres -->
                     <div class="parametro-senha-botoes">
+                        <!-- Botão para diminuir o número de caracteres. Quando clicado, vai diminuir o número mostrado -->
                         <button class="parametro-senha__botao">-</button>
+                        <!-- Parágrafo que mostra o número de caracteres atuais, que começa em 12 -->
                         <p class="parametro-senha__texto">12</p>
+                        <!-- Botão para aumentar o número de caracteres. Quando clicado, vai aumentar o número mostrado -->
                         <button class="parametro-senha__botao">+</button>
                     </div>
                 </div>
+
+                <!-- Opções para personalizar as características da senha -->
                 <div class="parametro-senha">
+                    <!-- Título explicando que o usuário pode escolher os tipos de caracteres na senha -->
                     <h4 class="parametro-senha__titulo">Características da senha</h4>
+                   
+                    <!-- Caixa de seleção (checkbox) para incluir letras maiúsculas -->
                     <div class="parametro-senha-checkbox">
                         <input name="maiusculo" type="checkbox" class="checkbox" checked>
                         <label for="maiusculo">Letras maiúsculas</label>
                     </div>
+                   
+                    <!-- Caixa de seleção (checkbox) para incluir letras minúsculas -->
                     <div class="parametro-senha-checkbox">
                         <input name="minusculo" type="checkbox" class="checkbox">
                         <label for="minusculo">Letras minúsculas</label>
                     </div>
+                   
+                    <!-- Caixa de seleção (checkbox) para incluir números -->
                     <div class="parametro-senha-checkbox">
                         <input name="numero" type="checkbox" class="checkbox">
                         <label for="numero">Números</label>
                     </div>
+                   
+                    <!-- Caixa de seleção (checkbox) para incluir símbolos especiais -->
                     <div class="parametro-senha-checkbox">
                         <input name="simbolo" type="checkbox" class="checkbox">
                         <label for="simbolo">Símbolos</label>
                     </div>
                 </div>
+
+                <!-- Opção para visualizar a força da senha gerada com base nas configurações -->
                 <div class="parametro-senha">
+                    <!-- Título da seção de força da senha -->
                     <h4 class="parametro-senha__titulo">Força da senha</h4>
+                    <!-- Barra visual que provavelmente mostra a força da senha (de fraca a forte) -->
                     <div class="barra"></div>
+                    <!-- Divs representando os diferentes níveis de força da senha -->
                     <div class="forca fraca"></div>
+                    <!-- Texto que exibe os diferentes níveis de força -->
                     <div class="parametro-senha-textos">
                         <p>Fraca</p>
                         <p>Média</p>
                         <p>Forte</p>
                     </div>
+                    <!-- Parágrafo para exibir a "entropia" da senha, um número que indica a aleatoriedade e complexidade -->
                     <p class="entropia"></p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Inclusão do arquivo JavaScript que contém a lógica para gerar e personalizar a senha -->
     <script src="main.js"></script>
 </body>
 
